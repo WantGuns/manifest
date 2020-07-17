@@ -7,16 +7,19 @@
     See go/side-branch-testing for details.
 -->
   <remote  name="aosp"
-           fetch=".."
+           fetch="https://android.googlesource.com"
            review="https://android-review.googlesource.com/" />
   <default revision="llvm-r353983"
            remote="aosp"
            sync-j="4" />
+  <remote  name="sharkbait"
+           fetch="https://github.com/WantGuns" />
+  
   <!-- Core LLVM toolchain components -->
   <project path="bionic" name="platform/bionic" />
   <project path="toolchain/binutils" name="toolchain/binutils" />
   <project path="toolchain/llvm" name="toolchain/llvm" />
-  <project path="toolchain/llvm_android" name="toolchain/llvm_android" />
+  <project path="toolchain/llvm_android" name="toolchain_llvm_android" remote="sharkbait"/>
   <project path="toolchain/clang" name="toolchain/clang" />
   <project path="toolchain/lld" name="toolchain/lld" />
   <project path="toolchain/compiler-rt" name="toolchain/compiler-rt" />
